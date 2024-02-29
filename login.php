@@ -2,6 +2,10 @@
 require_once 'db.php';
 session_start();
 
+if (isset($_REQUEST['success'])) {
+    echo "<p>Registration successful! You can now login.</p>";
+}
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
@@ -43,7 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Close connection
 $conn->close();
 ?>
-
 
 
 
