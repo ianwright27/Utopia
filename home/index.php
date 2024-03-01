@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <a href="../logout.php">Logout</a>
     <h1>Welcome, <? echo $_SESSION['username']; ?></h1>
     <p>What are you thinking?</p>
     <button>Create a report</button>
