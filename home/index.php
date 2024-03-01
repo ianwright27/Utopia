@@ -18,43 +18,45 @@ require_once('../app_settings.php');
             <!-- Setting column -->
             <div class="col-lg-2 settings-col">
 
-                <div class="logo">
-                    <b>
-                        <?php echo $app_name_placeholder; ?>
-                    </b>
+                <div class="settings-container col-lg-2  fixed-top">
+                    <div class="logo">
+                        <b>
+                            <?php echo $app_name_placeholder; ?>
+                        </b>
+                    </div>
+
+                    <div class="list-group menu-list">
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-house-door-fill"></i>
+                            <span>Home</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-search"></i>
+                            <span>Explore</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-bell"></i>
+                            <span>Notifications</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-envelope"></i>
+                            <span>Messages</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-person"></i>
+                            <span>Profile</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <i class="bi bi-pencil-square"></i>
+                            <span>Post</span>
+                        </a>
+                    </div>
+
+                    <button class="btn btn-secondary m-2 logout-btn">
+                        <a href="../logout.php" class="text-light">Logout</a>
+                    </button>
+
                 </div>
-
-                <div class="list-group menu-list">
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-house-door-fill"></i>
-                        <span>Home</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-search"></i>
-                        <span>Explore</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-bell"></i>
-                        <span>Notifications</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-envelope"></i>
-                        <span>Messages</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-person"></i>
-                        <span>Profile</span>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-pencil-square"></i>
-                        <span>Post</span>
-                    </a>
-                </div>
-
-                <button class="btn btn-danger m-2">
-                    <a href="../logout.php" class="text-light">Logout</a>
-                </button>
-
             </div>
 
 
@@ -78,57 +80,9 @@ require_once('../app_settings.php');
 
                 <!-- Posts / Reports here -->
                 <!-- Post UI -->
-                <div class="post">
-                    <div class="post-header">
-                        <img class="post-author-pic" src="https://cdn-icons-png.flaticon.com/512/219/219969.png" alt="">
-                        <p class="post-author">Anonymous User #2345664</p>
-                    </div>
-                    <div class="post-content">
-                        <br>
-                        <h4 class="post-title">Most Toxic Firms in Nairobi</h4>
-                        <p class="remark">52 recorded so far</p>
-                        <br>
-                        <div class="post-actions">
-                            <button class="btn">View Stats</button>
-                        </div>
-                    </div>
-                    <div class="post-footer">
-                        <br>
-                        <div class="row">
-                            <ul class="post-date">
-                                <li>
-                                    <span class="date">11:01 PM 28-02-2024</span>
-                                    .&nbsp;
-                                </li>
-                                <li>
-                                    <span class="views">100K</span> views
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="row post-metadata">
-                            <div class="col text-center post-likes">
-                                <i class="bi bi-chat"></i>
-                                50.6K
-                            </div>
-                            <div class="col text-center post-comments">
-                                <i class="bi bi-file-arrow-up"></i>
-                                50.6K
-                            </div>
-                            <div class="col text-center post-comments">
-                                <i class="bi bi-heart"></i>
-                                100K
-                            </div>
-                            <div class="col text-center post-saves">
-                                <i class="bi bi-bookmark"></i>
-                                58K
-                            </div>
-                            <div class="col text-center post-share">
-                                <i class="bi bi-upload"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                require_once "sample_posts.php";
+                ?>
 
             </div>
 

@@ -15,7 +15,9 @@
     <!-- Load JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
-
     <!-- Load custom css -->
     <link rel="stylesheet" href="../assets/css/home.css">
+
+    <!-- Load custom JS -->
+    <script src="../assets/js/ui.js"></script>
 </head>
