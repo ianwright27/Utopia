@@ -18,45 +18,43 @@ require_once('../app_settings.php');
             <!-- Setting column -->
             <div class="col-lg-2 settings-col">
 
-                <div class="settings-container col-lg-2  fixed-top">
-                    <div class="logo">
-                        <b>
-                            <?php echo $app_name_placeholder; ?>
-                        </b>
-                    </div>
-
-                    <div class="list-group menu-list">
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-house-door-fill"></i>
-                            <span>Home</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-search"></i>
-                            <span>Explore</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-bell"></i>
-                            <span>Notifications</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-envelope"></i>
-                            <span>Messages</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-person"></i>
-                            <span>Profile</span>
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="bi bi-pencil-square"></i>
-                            <span>Post</span>
-                        </a>
-                    </div>
-
-                    <button class="btn btn-secondary m-2 logout-btn">
-                        <a href="../logout.php" class="text-light">Logout</a>
-                    </button>
-
+                <div class="logo">
+                    <b>
+                        <?php echo $app_name_placeholder; ?>
+                    </b>
                 </div>
+
+                <div class="list-group menu-list">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-house-door-fill"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-search"></i>
+                        <span>Explore</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-bell"></i>
+                        <span>Notifications</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-envelope"></i>
+                        <span>Messages</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-person"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="bi bi-pencil-square"></i>
+                        <span>Post</span>
+                    </a>
+                </div>
+
+                <button class="btn btn-secondary m-2 logout-btn">
+                    <a href="../logout.php" class="text-light">Logout</a>
+                </button>
+
             </div>
 
 
@@ -94,16 +92,6 @@ require_once('../app_settings.php');
     </div>
 
 
-    <h1>Welcome, <? echo $_SESSION['username']; ?></h1>
-    <p>What are you thinking?</p>
-    <button>Create a report</button>
-    <br>
-    <button>Need insights</button>
-    <br>
-    <button>Trending reports for the day!</button>
-    <br>
-    <button>Check your report stats</button>
-    <br>
 </body>
 
 </html>
