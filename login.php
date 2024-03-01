@@ -13,13 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Fetch user from the database
-    $stmt = $conn->prepare("SELECT id, email, password_ FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT id, email, fname, password_ FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows == 1) {
-        $stmt->bind_result($id, $email, $hashed_password);
+        $stmt->bind_result($id, $email, $fname, $hashed_password);
         $stmt->fetch();
 
         // Verify password
@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Password is correct, set session variables
             $_SESSION['id'] = $id;
             $_SESSION['email'] = $email;
+            $_SESSION['fname'] = $fname; // session variable 
 
             // Redirect to dashboard or homepage
             header("Location: home/");

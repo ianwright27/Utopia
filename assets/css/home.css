@@ -1,0 +1,185 @@
+
+/* Layout */
+
+
+/* ========================================================================== */
+.settings-col{
+    background: rgb(255, 255, 255); 
+    overflow-y: hidden; 
+    height: 100vh; /* Adjust height as needed */
+}
+
+/* Logo */
+.logo {
+    padding: 40px; 
+}
+
+/* Buttons in this area */
+.btn a{
+    color: #000; 
+    text-decoration: none; 
+}
+
+/* menu */
+.menu-list a{
+    /* font-size: 20px;  */
+    text-align: left;
+}
+.menu-list i{
+    margin-right: 10px; 
+}
+
+
+/* ========================================================================== */
+.content-col{
+    background-color: rgb(231, 231, 231); 
+    /* overflow-y: scroll;  */
+    height: 100vh; /* Adjust height as needed */
+}
+
+.content-heading col{  
+    padding: 30px; 
+    background: yellow; 
+} 
+
+.content-heading h2{
+    font-size: 18px; 
+}
+
+.active_line{
+    height: 4px; 
+    width: 40px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border-radius: 5px; 
+    background-color: black; 
+} 
+
+.active {
+    display: block; 
+} 
+
+.not_active {
+    display: none; 
+}
+
+.for_you, .following{
+    background-color: #ffffff;
+} 
+
+.for_you:hover{
+    background-color: #efefef; 
+    cursor: pointer; 
+}
+.following:hover{
+    background-color: #efefef; 
+    cursor: pointer; 
+}
+
+
+/* posts */
+.post{
+    position: relative; 
+    padding: 10px; 
+    background-color: #ffffff; 
+    margin-top: 10px; 
+} 
+.post-header{
+    position: relative; 
+    background-color: rgb(255, 255, 255); 
+    height: 50px; 
+    padding: 5px; 
+} 
+.post-author-pic{
+    width: 45px; 
+    border: 60%; 
+} 
+.post-author {
+    position: absolute; 
+    left: 60px; 
+    top: 10px; 
+    font-weight: bold; 
+    font-size: 16px;
+}
+.post-content {
+    background: #ffffff; 
+    padding-top: 10px;
+}
+.remark {
+    position: relative; 
+    padding-left: 10px; 
+    color: #1a8cd8; 
+    font-weight: bold; 
+}
+.post-title {
+    position: relative; 
+    padding-left: 10px; 
+} 
+.post-actions {
+    position: relative; 
+    padding-left: 10px; 
+}
+.post-actions button { 
+    margin-top: -10px; 
+    width: 200px; 
+    font-size: 14px; 
+    font-weight: bold;
+    border: 2px solid #1a8cd8; 
+    background-color: #1a8cd8; 
+    color: #fff; 
+} 
+.post-actions button:hover{
+    outline: #000; 
+    background-color: #fff; 
+    border: 2px solid #1a8cd8; 
+    color: #1a8cd8; 
+}
+.post-footer{
+    position: relative;
+    background-color: rgb(255, 255, 255); 
+} 
+.post-date{
+    position: relative; 
+    padding-top: 10px; 
+    padding-left: 20px; 
+}
+.post-date li{
+    float: left; 
+    /* padding-left: 20px;  */
+    list-style: none; 
+    font-size: 14px; 
+} 
+.post-metadata {
+    padding: 10px; 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #777; 
+} 
+.post-metadata i {
+    font-size: 16px; 
+}
+.post-metadata .col {
+    background: #ffffff; 
+    padding: 5px; 
+}
+.post-metadata .col:hover {
+    /* background: #ebebeb;  */
+    cursor: pointer; 
+    color: #333; 
+} 
+
+/* ========================================================================== */
+.sidebar-col{
+    background: rgb(228, 228, 228); 
+}
+
+#infinite-scroll {
+    /* overflow-y: scroll; */
+    /* height: 80vh; Adjust height as needed */
+}
+
+#limited-scroll {
+    overflow-y: scroll;
+    height: 80vh; /* Adjust height as needed */
+    max-height: 400px; /* Set maximum height */ 
+}
