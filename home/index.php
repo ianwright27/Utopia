@@ -89,7 +89,53 @@ require_once('../app_settings.php');
 
             <div class="col-lg-3 sidebar-col" id="limited-scroll">
                 <!-- Limited scroll column content -->
-                sidebar column (trending reports, connections, ads)
+                <!-- Search row -->
+                <div class="search-row">
+                    <!-- Search input and button -->
+                    <i class="bi bi-search"></i>
+                    <input type="text" class="search-box" placeholder="Search" aria-label="Search" aria-describedby="search-icon">
+                </div>
+
+                <!-- Trending reports -->
+                <div class="trending-reports">
+                    <!-- Trending reports content -->
+                    <h4 class="text-center">Trending Reports For You</h4>
+                    <ul class="list-group">
+                        <!-- List items for trending reports -->
+                        <li class="list-group-item">
+                            <div class="menu align-items-center">
+                                <i class="bi bi-three-dots"></i>
+                            </div>
+                            <div class="category">Business</div>
+                            <div class="keyword">Wright</div>
+                            <div class="frequency">
+                                <span class="reports">369K</span> reports
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="menu align-items-center">
+                                <i class="bi bi-three-dots"></i>
+                            </div>
+                            <div class="category">Music</div>
+                            <div class="keyword">Rihanna</div>
+                            <div class="frequency">
+                                <span class="reports">169K</span> reports
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="menu align-items-center">
+                                <i class="bi bi-three-dots"></i>
+                            </div>
+                            <div class="category">Travel</div>
+                            <div class="keyword">AirBnB</div>
+                            <div class="frequency">
+                                <span class="reports">1009</span> reports
+                            </div>
+                        </li>
+                        <!-- Add more list items as needed -->
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
