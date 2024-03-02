@@ -14,31 +14,49 @@
 .logo {
     margin-top: 40px;
     padding: 20px; 
-    font-size: 20px;
+    font-size: 20px; 
+    cursor: pointer; 
+}
+
+.logo a {
+    color: #000; 
+    text-decoration: none; 
+    font-weight: bold; 
 }
 
 /* Buttons in this area */
-.btn a{
-    color: #000; 
+.logout-btn a{
+    color: #000 !important; 
     text-decoration: none; 
 }
 .logout-btn{
     width: 100px; 
     border-radius: 20px; 
+    border:none; 
+    font-size: 14px; 
+    padding: 8px; 
+    background-color: #fafafa;
+} 
+
+.logout-btn:hover{ 
+    color: #000; 
+    background-color:#efefef; 
 }
 /* menu */ 
 .menu-list {
-    width: 190px; 
+    width: 150px; 
 }
 .menu-list a{
-    font-size: 16px; 
+    font-size: 14px; 
     margin-left: 0%;
     text-align: left; 
-    border: none;
+    border: none; 
+    font-weight: bold;
     /* background-color: #333; */
 }
 .menu-list a:hover{
     border-radius: 20px; 
+    background-color: #efefef;
 }
 .menu-list i{
     margin-right: 10px; 
@@ -59,19 +77,21 @@
 
 /* Hide the default scrollbar */
 .content-col::-webkit-scrollbar {
-    width: 7px;
+    width: 4px; 
 }
+
   
 /* Track */
 .content-col::-webkit-scrollbar-track {
-    background: #eff3f4; 
-    border-radius: 5px;
+    /* background: #eff3f4;  */
+    background: transparent; 
+    border-radius: 5px; 
 }
 
 /* Handle */
 .content-col::-webkit-scrollbar-thumb {
     background: #bdc0c1; 
-    border-radius: 5px;
+    border-radius: 5px; 
 }
 
 /* Handle on hover */
@@ -131,6 +151,72 @@
     cursor: pointer; 
 }
 
+/* posting ui */
+.posting-ui{
+    position: relative; 
+    padding: 10px; 
+    background-color: #ffffff; 
+    border-bottom: 1px solid #ccc;
+}
+
+.profile-pic{
+    position: absolute; 
+    top: 5px; 
+    left: 10px; 
+    width: 40px; 
+    border-radius: 60%; 
+} 
+.profile-pic:hover{
+    cursor: pointer; 
+}
+
+.whats-happening {
+    position: relative; 
+    width: inherit;  
+}
+
+.whats-happening input {
+    width: 100%;  
+    padding-top: 10px; 
+    padding-bottom: 17px; 
+    padding-left: 60px; 
+    border: none; 
+}
+
+.whats-happening input:focus {
+    outline:none; 
+} 
+.icons {
+    position: relative; 
+    padding: 5px; 
+    margin-top: 10px; 
+    background-color: #ffffff; 
+} 
+.icon-group{
+    background-color: #ffffff;
+    padding-left: 50px;  
+} 
+.icon-group i{
+    color:#1a8cd8; 
+    font-weight: bold; 
+    margin:5px; 
+} 
+.icon-group i:hover{
+    cursor: pointer; 
+    color:#1578b9; 
+}
+.post-button {
+    position: absolute; 
+    bottom: 10px; 
+    right: 10px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 20px; 
+    width: 80px; 
+    padding: 5px; 
+    color: #ffffff; 
+    background-color: #8ecdf7;
+}
 
 /* posts */
 .post{
@@ -174,7 +260,7 @@
 } 
 .post-author-pic{
     width: 40px; 
-    border: 60%; 
+    border-radius: 60%; 
 } 
 .post-author {
     position: absolute; 
@@ -305,7 +391,8 @@
     position: relative; 
     background-color: #f7f9f9; 
     margin-top: 20px; 
-    padding-top: 5px; 
+    padding-top: 15px; 
+    cursor: default;
     padding-bottom: 10px; 
     border-top-left-radius: 10px; 
     border-top-right-radius: 10px; 
@@ -314,7 +401,7 @@
 }
 
 .trending-reports h4 {
-    font-size: 16px; 
+    font-size: 14px; 
     font-weight: bold; 
     margin-bottom: 20px;
 } 
@@ -329,7 +416,7 @@
 } 
 
 .trending-reports .list-group-item:hover{ 
-    background-color: #eeeeee; 
+    background-color: #eff1f1; 
     cursor: pointer; 
 }
 /* report format */ 
@@ -392,6 +479,15 @@
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
+    /* Hide the first and third columns */
+    .settings-col, .sidebar-col {
+        display: none;
+    }
+} 
+
+
+/* Media query for smaller yet bigger screens (e.g., iPad) */
+@media (max-width: 990px) {
     /* Hide the first and third columns */
     .settings-col, .sidebar-col {
         display: none;

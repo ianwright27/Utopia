@@ -19,9 +19,9 @@ require_once('../app_settings.php');
             <div class="col-lg-2 settings-col">
 
                 <div class="logo">
-                    <b>
+                    <a href="../home/">
                         <?php echo $app_name_placeholder; ?>
-                    </b>
+                    </a>
                 </div>
 
                 <div class="list-group menu-list">
@@ -51,7 +51,7 @@ require_once('../app_settings.php');
                     </a>
                 </div>
 
-                <button class="btn btn-secondary m-2 logout-btn">
+                <button class="m-2 logout-btn">
                     <a href="../logout.php" class="text-light">Logout</a>
                 </button>
 
@@ -76,6 +76,29 @@ require_once('../app_settings.php');
                             <div class="active_line active"></div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Posting UI -->
+                <div class="posting-ui">
+
+                    <!-- "What's happening?!" variation -->
+                    <div class="whats-happening">
+                        <!-- Profile picture (optional) -->
+                        <img class="profile-pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
+                        <input type="text" class="" placeholder="What have you discovered?">
+                    </div>
+
+                    <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
+                    <div class="icons">
+                        <div class="icon-group">
+                            <i class="bi bi-list-ul"></i>
+                            &nbsp;
+                            <i class="bi bi-emoji-smile"></i>
+                        </div>
+                    </div>
+
+                    <!-- "Post" button -->
+                    <button class="post-button">Post</button>
                 </div>
 
 
