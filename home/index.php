@@ -59,22 +59,25 @@ require_once('../app_settings.php');
 
 
             <!-- Content column -->
-            <div class="col-lg-7 content-col" id="infinite-scroll">
+            <div class="col-lg-7 content-col " id="infinite-scroll">
 
-                <div class="row content-heading">
-                    <div class="col following p-0">
-                        <br>
-                        <h2 class="text-center">Following</h2>
-                        <!-- Content for "For You" section -->
-                        <div class="active_line not_active"></div>
-                    </div>
-                    <div class="col for_you p-0">
-                        <br>
-                        <h2 class="text-center">For You</h2>
-                        <!-- Content for "Following" section -->
-                        <div class="active_line active"></div>
+                <div class="content-heading">
+                    <div class="row">
+                        <div class="col following p-0">
+                            <br>
+                            <h2 class="text-center">Following</h2>
+                            <!-- Content for "For You" section -->
+                            <div class="active_line not_active"></div>
+                        </div>
+                        <div class="col for_you p-0">
+                            <br>
+                            <h2 class="text-center">For You</h2>
+                            <!-- Content for "Following" section -->
+                            <div class="active_line active"></div>
+                        </div>
                     </div>
                 </div>
+
 
                 <!-- Posts / Reports here -->
                 <!-- Post UI -->

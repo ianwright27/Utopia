@@ -10,13 +10,6 @@
 
 } 
 
-.fixed-top {
-    position: fixed; /* Set position to fixed */
-    top: 0; /* Align to the top of the screen */
-    right: 0; /* Align to the left side of the screen */
-    z-index: 1000; /* Ensure the column appears above other content */
-    /* Add any additional styling as needed */
-}
 /* Logo */
 .logo {
     padding: 40px; 
@@ -55,16 +48,29 @@
 .content-col{
     position: sticky;
     background-color: rgb(231, 231, 231); 
-    overflow-y: scroll; 
+    overflow-y: auto; 
     height: 100vh; 
      
     z-index: 1000; 
 }
 
+.content-heading {
+    background-color: #fffffffa; 
+    border-bottom: 1px solid #f3f3f3; 
+    filter: blur(5);
+}
 
-.content-heading col{  
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+.content-heading .row .col{  
     padding: 30px; 
-    background: yellow; 
+    background: #ffffff00; 
 } 
 
 .content-heading h2{
