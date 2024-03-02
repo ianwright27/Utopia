@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf') format('woff2'), /* Regular font */
+         url('../fonts/Montserrat-Bold.ttf'); /* Bold font */
+    font-weight: normal; /* Font weight */
+    font-style: normal; /* Font style */
+}
+
+/* You can add additional @font-face rules for other font weights and styles */
+
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to body */
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to headings */
+}
+
+/* Apply Montserrat font to other elements as needed */

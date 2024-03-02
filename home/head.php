@@ -16,6 +16,8 @@
     <script src="../assets/js/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
     <!-- Load custom css -->
+    <link rel="stylesheet" href="../assets/css/all.css">
+    <!-- fonts are in all.css -->
     <link rel="stylesheet" href="../assets/css/home.css">
 
     <!-- Load custom JS -->

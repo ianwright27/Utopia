@@ -16,3 +16,28 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// universally scrolling a scrollable element (content-col) 
+
+// Use jQuery document ready function to ensure DOM content is loaded
+$(document).ready(function() {
+    // Use jQuery selector to find the .content-col element
+    var contentCol = $('.content-col');
+
+    // Add wheel event listener to the document body
+    $(document.body).on('wheel', function(event) {
+        // Prevent default scroll behavior on the document body
+        event.preventDefault();
+
+        // Get the deltaY (vertical scroll amount) from the event
+        var deltaY = event.originalEvent.deltaY;
+
+        // Scroll the content-col element by deltaY amount
+        contentCol.scrollTop(contentCol.scrollTop() + deltaY);
+    });
+});
+
+
+
+// hovering 

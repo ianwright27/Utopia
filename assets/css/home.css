@@ -98,7 +98,7 @@
 } 
 
 .content-heading h2{
-    font-size: 18px; 
+    font-size: 14px; 
 }
 
 .active_line{
@@ -173,7 +173,7 @@
     padding: 5px; 
 } 
 .post-author-pic{
-    width: 45px; 
+    width: 40px; 
     border: 60%; 
 } 
 .post-author {
@@ -181,7 +181,7 @@
     left: 60px; 
     top: 10px; 
     font-weight: bold; 
-    font-size: 16px;
+    font-size: 15px;
 }
 .post-content {
     background: #ffffff; 
@@ -191,11 +191,14 @@
     position: relative; 
     padding-left: 10px; 
     color: #1a8cd8; 
+    font-size: 14px;
     font-weight: bold; 
 }
 .post-title {
     position: relative; 
     padding-left: 10px; 
+    font-weight: bolder;
+    font-size: 22px;
 } 
 .post-actions {
     position: relative; 
@@ -229,16 +232,16 @@
     float: left; 
     /* padding-left: 20px;  */
     list-style: none; 
-    font-size: 14px; 
+    font-size: 12px; 
 } 
 .post-metadata {
     padding: 10px; 
-    font-size: 13px; 
+    font-size: 12px; 
     font-weight: bold; 
     color: #777; 
 } 
 .post-metadata i {
-    font-size: 16px; 
+    font-size: 12px; 
 }
 .post-metadata .col {
     background: #ffffff; 
@@ -366,7 +369,7 @@
 }
 
 
-/* ================================================================ */
+/* ================================================================ */ 
 
 #infinite-scroll {
     /* overflow-y: scroll; */
@@ -377,4 +380,20 @@
     /* overflow-y: scroll; */
     /* height: 80vh; Adjust height as needed */
     /* max-height: 400px; Set maximum height  */
+}
+ 
+
+/* UI Behaviour */ 
+/* Default layout for all screen sizes */
+
+.settings-col, .sidebar-col {
+    display: block;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    /* Hide the first and third columns */
+    .settings-col, .sidebar-col {
+        display: none;
+    }
 }
