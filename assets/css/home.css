@@ -181,6 +181,8 @@
     padding-bottom: 17px; 
     padding-left: 60px; 
     border: none; 
+    font-size: 14px; 
+    font-weight: bold; 
 }
 
 .whats-happening input:focus {
@@ -197,7 +199,7 @@
     padding-left: 50px;  
 } 
 .icon-group i{
-    color:#1a8cd8; 
+    color:#1d9bf0; 
     font-weight: bold; 
     margin:5px; 
 } 
@@ -210,13 +212,20 @@
     bottom: 10px; 
     right: 10px; 
     font-weight: bold; 
+    font-size: 12px !important; 
     border: none; 
     border-radius: 20px; 
     width: 80px; 
     padding: 5px; 
     color: #ffffff; 
     background-color: #8ecdf7;
-}
+} 
+/* 
+when post-button, post-ui is active, these are
+button specs: 
+origi: 1d9bf0
+hover: 1a8cd8
+*/
 
 /* posts */
 .post{
@@ -292,18 +301,21 @@
 }
 .post-actions button { 
     margin-top: -10px; 
-    width: 200px; 
+    width: auto; 
+    padding-left: 20px; 
+    padding-right: 20px; 
     font-size: 14px; 
     font-weight: bold;
-    border: 2px solid #1a8cd8; 
-    background-color: #1a8cd8; 
+    border: 2px solid #1d9bf0; 
+    border-radius: 20px; 
+    background-color: #1d9bf0; 
     color: #fff; 
 } 
 .post-actions button:hover{
     outline: #000; 
-    background-color: #fff; 
+    background-color: #1a8cd8; 
     border: 2px solid #1a8cd8; 
-    color: #1a8cd8; 
+    color: #fff; 
 }
 .post-footer{
     position: relative;
@@ -424,25 +436,22 @@
     position: absolute; 
     top: 10px; 
     right: 10px;  
-    text-align: center;
-    width: 40px;
-    height: 35px; 
-    border-radius: 80px; 
+    width: 30px;
+    height: 30px; 
+    text-align: center; 
     background-color: #f7f9f9; 
     border: 1px solid #f7f9f9; 
+    border-radius: 60%;
 }
 .menu i { 
-    /* position: absolute;  */
-    text-align: center;
-    padding: 10px; 
+    padding-top: 6px; 
+    /* padding-top: 10px;   */
     font-weight: bold; 
-    border-radius: 20%;  
-    font-size: 20px; 
+    font-size: 16px; 
 }
-
-.menu:hover{
-    background-color: #eeeeee; 
-    border: 1px solid #ccc; 
+.post-menu{
+    background-color: transparent; 
+    border: none; 
 }
 
 .category {

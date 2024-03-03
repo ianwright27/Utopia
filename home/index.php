@@ -26,27 +26,27 @@ require_once('../app_settings.php');
 
                 <div class="list-group menu-list">
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-house-door-fill"></i>
+                        <i class="fa-solid fa-house"></i>
                         <span>Home</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-search"></i>
+                        <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Explore</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-bell"></i>
+                        <i class="fa-regular fa-bell"></i>
                         <span>Notifications</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-envelope"></i>
+                        <i class="fa-regular fa-envelope"></i>
                         <span>Messages</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-person"></i>
+                        <i class="fa-regular fa-user"></i>
                         <span>Profile</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">
-                        <i class="bi bi-pencil-square"></i>
+                        <i class="fa-solid fa-pen-to-square"></i>
                         <span>Post</span>
                     </a>
                 </div>
@@ -84,16 +84,16 @@ require_once('../app_settings.php');
                     <!-- "What's happening?!" variation -->
                     <div class="whats-happening">
                         <!-- Profile picture (optional) -->
-                        <img class="profile-pic" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Profile Picture">
+                        <img class="profile-pic" src="../uploads/user/blank-profile-picture-973460_960_720.webp" alt="Profile Picture">
                         <input type="text" class="" placeholder="What have you discovered?">
                     </div>
 
                     <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
                     <div class="icons">
                         <div class="icon-group">
-                            <i class="bi bi-list-ul"></i>
+                            <i class="fa-solid fa-chart-bar" title="create a poll"></i>
                             &nbsp;
-                            <i class="bi bi-emoji-smile"></i>
+                            <i class="fa-regular fa-face-laugh-beam" title="emoji"></i>
                         </div>
                     </div>
 
@@ -126,28 +126,28 @@ require_once('../app_settings.php');
                     <ul class="list-group">
                         <!-- List items for trending reports -->
                         <li class="list-group-item">
-                            <div class="menu align-items-center">
-                                <i class="bi bi-three-dots"></i>
+                            <div class="menu align-items-center" title="more">
+                                <i class="fa-solid fa-ellipsis"></i>
                             </div>
                             <div class="category">Business</div>
-                            <div class="keyword">Wright</div>
+                            <div class="keyword">Safaricom</div>
                             <div class="frequency">
                                 <span class="reports">369K</span> reports
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="menu align-items-center">
-                                <i class="bi bi-three-dots"></i>
+                            <div class="menu align-items-center" title="more">
+                                <i class="fa-solid fa-ellipsis"></i>
                             </div>
                             <div class="category">Music</div>
-                            <div class="keyword">Rihanna</div>
+                            <div class="keyword">Nikita Kering</div>
                             <div class="frequency">
                                 <span class="reports">169K</span> reports
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="menu align-items-center">
-                                <i class="bi bi-three-dots"></i>
+                            <div class="menu align-items-center" title="more">
+                                <i class="fa-solid fa-ellipsis"></i>
                             </div>
                             <div class="category">Travel</div>
                             <div class="keyword">AirBnB</div>
