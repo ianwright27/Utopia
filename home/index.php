@@ -1,10 +1,9 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <?php
+
+session_start();
 
 require_once('head.php');
 require_once('../app_settings.php');
@@ -63,44 +62,78 @@ require_once('../app_settings.php');
 
                 <div class="content-heading">
                     <div class="row">
-                        <div class="col following p-0">
-                            <br>
-                            <h2 class="text-center">Following</h2>
-                            <!-- Content for "For You" section -->
-                            <div class="active_line not_active"></div>
-                        </div>
+                        <!-- <div class="col following p-0"> -->
+                        <!-- <br> -->
+                        <!-- <h2 class="text-center">Following</h2> -->
+                        <!-- Content for "For You" section -->
+                        <!-- <div class="active_line not_active"></div> -->
+                        <!-- </div> -->
                         <div class="col for_you p-0">
                             <br>
-                            <h2 class="text-center">For You</h2>
+                            <h2 class="text-center">Feed</h2>
                             <!-- Content for "Following" section -->
                             <div class="active_line active"></div>
                         </div>
                     </div>
                 </div>
 
+
+
                 <!-- Posting UI -->
                 <div class="posting-ui">
+                    <form action="../home/functionalities/post.php" method="POST">
 
-                    <!-- "What's happening?!" variation -->
-                    <div class="whats-happening">
-                        <!-- Profile picture (optional) -->
-                        <img class="profile-pic" src="../uploads/user/blank-profile-picture-973460_960_720.webp" alt="Profile Picture">
-                        <input type="text" class="" placeholder="What have you discovered?">
-                    </div>
+                        <!-- Embedding session user ID into a hidden input field -->
+                        <input type="hidden" name="session_user_id" id="sessionUserId" value="<?php echo $_SESSION['id']; ?>">
+                        <input type="hidden" name="post_type" id="postType" value="post">
 
-                    <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
-                    <div class="icons">
-                        <div class="icon-group">
-                            <i class="fa-solid fa-chart-bar" title="create a poll"></i>
-                            &nbsp;
-                            <i class="fa-regular fa-face-laugh-beam" title="emoji"></i>
+                        <!-- "What's happening?!" variation -->
+                        <div class="whats-happening">
+                            <!-- Profile picture (optional) -->
+                            <img class="profile-pic" src="../uploads/user/blank-profile-picture-973460_960_720.webp" alt="Profile Picture">
+                            <input type="text" name="poll_title" id="pollTitle" class="" placeholder="What have you discovered?">
                         </div>
-                    </div>
 
-                    <!-- "Post" button -->
-                    <button class="post-button">Post</button>
+
+                        <!-- Poll Container (Hidden by default) -->
+                        <div class="poll-container" style="display: none;">
+                            <!-- Poll Choices -->
+                            <div class="poll-choices">
+                                <!-- <input type="text" class="poll-choice" placeholder="Choice 1"> -->
+                                <!-- <input type="text" class="poll-choice" placeholder="Choice 2"> -->
+                                <!-- Add Choice Button -->
+                                <!-- <button class="add-choice-button">Add Choice</button> -->
+                            </div>
+                            <!-- Expiry Date Selector -->
+                            <input type="datetime-local" name="expiry_date" id="expiryDate" class="expiry-date" placeholder="Expiry Date">
+                            <!-- Remove Poll Button -->
+                            <button class="remove-poll-button">Remove Poll</button>
+                        </div>
+
+                        <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
+                        <div class="icons">
+                            <div class="icon-group">
+                                <i class="fa-solid fa-chart-bar" id="pollButton" title="create a poll"></i>
+                                &nbsp;
+                                <i class="fa-regular fa-face-laugh-beam" id="emojiButton" title="emoji"></i>
+                            </div>
+                        </div>
+
+                        <!-- "Post" button -->
+                        <input type="submit" class="post-button" id="postButton">
+                    </form>
+
+
                 </div>
 
+
+                <!-- Post success -->
+                <?php
+                $alert_msg = "Post sent successfully!";
+                if (isset($_REQUEST['post_success'])) {
+                    echo '<div class="alert alert-success" role="alert">' . $alert_msg . '</div>';
+                }
+                ?>
 
                 <!-- Posts / Reports here -->
                 <!-- Post UI -->
