@@ -5,34 +5,47 @@ require_once('../../db.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if all necessary data is set and not empty
     if (
-        isset($_POST['expiry_date']) &&
-        isset($_POST['choices']) &&
         isset($_POST['poll_title']) &&
         isset($_POST['session_user_id']) &&
         isset($_POST['post_type'])
     ) {
         // Extract data from POST variables
-        $expiryDate = $_POST['expiry_date'];
-        $choices = $_POST['choices'];
         $pollTitle = $_POST['poll_title'];
         $userId = $_POST['session_user_id'];
         $postType = $_POST['post_type'];
 
-        // Insert poll data into polls table
-        $pollId = insertPoll($expiryDate);
+        // Check if it's a poll-less post
+        if (empty($_POST['choices']) && empty($_POST['expiry_date'])) {
+            // Insert poll-less post data into posts table
+            $postId = insertPost($pollTitle, $userId, $postType, null);
 
-        // Insert poll choices into poll_choices table
-        insertPollChoices($pollId, $choices);
+            // Insert post stats into post_stats table
+            insertPostStats($postId);
 
-        // Insert post data into posts table
-        $postId = insertPost($pollTitle, $userId, $postType, $pollId);
+            // Return success message
+            echo json_encode(array("message" => "Post added successfully", "postId" => $postId));
+            header('Location: ../?post_success');
+        } else {
+            // Extract poll data
+            $expiryDate = $_POST['expiry_date'];
+            $choices = $_POST['choices'];
 
-        // Insert post stats into post_stats table
-        insertPostStats($postId);
+            // Insert poll data into polls table
+            $pollId = insertPoll($expiryDate);
 
-        // Return success message
-        echo json_encode(array("message" => "Post added successfully", "postId" => $postId));
-        header('Location: ../?post_success');
+            // Insert poll choices into poll_choices table
+            insertPollChoices($pollId, $choices);
+
+            // Insert post data into posts table
+            $postId = insertPost($pollTitle, $userId, $postType, $pollId);
+
+            // Insert post stats into post_stats table
+            insertPostStats($postId);
+
+            // Return success message
+            echo json_encode(array("message" => "Post added successfully", "postId" => $postId));
+            header('Location: ../?post_success');
+        }
     } else {
         // If any necessary data is missing, return an error message
         echo json_encode(array("error" => "Missing required data"));
@@ -84,3 +97,4 @@ function insertPostStats($postId)
     $stmt->execute();
     $stmt->close();
 }
+?>

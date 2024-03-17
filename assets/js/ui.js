@@ -100,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function() {
             // Show the poll container
             pollContainer.style.display = "block";
             // Create default choice inputs
-            createDefaultChoiceInputs();
+            createDefaultChoiceInputs(); 
+            removeAutoCoomplete(); 
             // Show the remove Poll button
             removePollButton.style.display = "block";
             // Create the addChoice button (if not already present)
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     const pollChoicesContainer = document.querySelector(".poll-choices");
                     pollChoicesContainer.appendChild(newChoiceInput); 
                     pollChoicesContainer.appendChild(lineBreak); 
+                    removeAutoCoomplete(); 
                 });
                 pollContainer.appendChild(addChoiceButton);
             }
@@ -182,15 +184,21 @@ document.addEventListener("DOMContentLoaded", function() {
 // remove auto-complete from input fields 
 // ------------------------------------------------------------------- 
 // Wait for the DOM content to be fully loaded
-document.addEventListener("DOMContentLoaded", function() {
+
+function removeAutoCoomplete() {
+    
     // Get references to input fields
-    const inputFields = document.querySelectorAll("input[type='text']");
+    const inputFields = document.querySelectorAll("input");
 
     // Loop through each input field
     inputFields.forEach(function(input) {
         // Set the autocomplete attribute to "off"
         input.setAttribute("autocomplete", "off");
     });
+
+}
+document.addEventListener("DOMContentLoaded", function() {
+    removeAutoCoomplete(); 
 });
  
 
@@ -210,3 +218,17 @@ document.addEventListener("DOMContentLoaded", function() {
 }); 
 
 
+// Function to reload the posts container
+function reloadPostsContainer() {
+    // Reload the content of the posts container by fetching the latest posts
+    $(".posts-container").load(baseUrl + "/home/functionalities/fetch_latest_posts.php");
+}
+
+
+// Call the reloadPostsContainer function periodically to refresh the posts
+$(document).ready(function() { 
+    // at first 
+    reloadPostsContainer();
+    // Set the interval to refresh the posts every 5 minutes (300,000 milliseconds)
+    setInterval(reloadPostsContainer, 300000);
+});

@@ -138,10 +138,12 @@ require_once('../app_settings.php');
                 ?>
 
                 <!-- Posts / Reports here -->
-                <!-- Post UI -->
+                <!-- Posts UI -->
+                <div class="posts-container">
                 <?php
-                require_once "sample_posts.php";
+                // require_once "sample_posts.php";
                 ?>
+                </div>
 
             </div>
 
