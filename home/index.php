@@ -99,15 +99,17 @@ require_once('../app_settings.php');
                         <div class="poll-container" style="display: none;">
                             <!-- Poll Choices -->
                             <div class="poll-choices">
+                                <label for="choices">Choices</label>
                                 <!-- <input type="text" class="poll-choice" placeholder="Choice 1"> -->
                                 <!-- <input type="text" class="poll-choice" placeholder="Choice 2"> -->
                                 <!-- Add Choice Button -->
                                 <!-- <button class="add-choice-button">Add Choice</button> -->
                             </div>
                             <!-- Expiry Date Selector -->
-                            <input type="datetime-local" name="expiry_date" id="expiryDate" class="expiry-date" placeholder="Expiry Date">
+                            <label for="expiry_date">Expiry Date: </label>
+                            <input type="datetime-local" name="expiry_date" id="expiryDate" class="expiry-date" placeholder="Date">
                             <!-- Remove Poll Button -->
-                            <button class="remove-poll-button">Remove Poll</button>
+                            <span class="remove-poll-button"><i class="fa-solid fa-trash"></i> Remove Poll</span>
                         </div>
 
                         <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
@@ -131,7 +133,7 @@ require_once('../app_settings.php');
                 <?php
                 $alert_msg = "Post sent successfully!";
                 if (isset($_REQUEST['post_success'])) {
-                    echo '<div class="alert alert-success" role="alert">' . $alert_msg . '</div>';
+                    echo '<div class="alert alert-success" id="postSuccessAlert" role="alert">' . $alert_msg . '</div>';
                 }
                 ?>
 

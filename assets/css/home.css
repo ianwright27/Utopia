@@ -219,7 +219,86 @@
     padding: 5px; 
     color: #ffffff; 
     background-color: #8ecdf7;
+}  
+
+
+.poll-container {
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background: transparent; 
+    width: 55%; 
+    padding: 20px; 
+    padding-bottom: 75px;
+    border-radius: 10px; 
+    border: 1px solid #d8d8d8; 
+    margin-bottom: 10px;
+}
+.poll-choices {
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background: transparent; 
+    width: 100%; 
+    padding: 5px; 
+}
+.poll-choice {
+    position: relative; 
+    /* margin-left: 35px;  */
+    margin-bottom: 10px; 
+    padding: 5px; 
+    width: 100%; 
+    font-size: 14px; 
+    border-radius: 5px;
+    border: 1px solid #d8d8d8; 
 } 
+.poll-choices label {
+    margin-left: 0px !important;  
+}
+.poll-container label{
+    margin-left: 10px;  
+    font-size: 14px; 
+    font-weight: bold; 
+}
+#expiryDate {
+    margin-left: 10px;  
+    border: 1px solid #d8d8d8; 
+    color: #8a8a8a; 
+} 
+.poll-container span {
+    float: left; 
+    margin-top: 15px; 
+    margin-left: 10px;   
+    padding: 5px; 
+    font-size: 14px; 
+    border: 1px solid #4b4b4b; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+.remove-poll-button {
+    color: #dd3a48; 
+    border: 1px solid #dd3a48 !important; 
+}
+
+.add-choice-button {
+    color: #1990df; 
+    border: 1px solid #1990df !important; 
+}
+
+.remove-poll-button:hover {
+    color: #dd3a48; 
+    border: 1px solid #dd3a48 !important; 
+    background-color: #faeaec; 
+}
+
+.add-choice-button:hover {
+    background-color: #1990df; 
+    color: #fff; 
+}
+
+
+
+
 /* 
 when post-button, post-ui is active, these are
 button specs: 
@@ -350,6 +429,7 @@ hover: 1a8cd8
     cursor: pointer; 
     color: #333; 
 } 
+ 
 
 
 
