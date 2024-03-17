@@ -132,16 +132,26 @@ foreach ($latestPosts as $post) {
                 <!-- recorded so far -->
             </p>
             <br>
-            <div class="post-actions">
-                <?php
+            
+            <?php
 
-                  if (isset($post['poll_choices']) && is_array($post['poll_choices'])) {
+            if (isset($post['poll_choices']) && is_array($post['poll_choices'])) {
+            ?>
+                <div class="post-actions">
+                    <?php
                     foreach ($post['poll_choices'] as $choice) {
-                        echo '<button class="btn">' . $choice . '</button>'; 
+                        echo '<button class="btn poll-choice-btn">' . $choice . '</button>'; 
+                        echo '<br>';  
+                            
                     }
-                }
-                ?>
-            </div>
+                    ?>
+                            
+                </div>
+            
+            <?php
+            }
+            ?>
+
         </div>
         <div class="post-footer">
             <br>

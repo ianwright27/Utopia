@@ -228,7 +228,41 @@ function reloadPostsContainer() {
 // Call the reloadPostsContainer function periodically to refresh the posts
 $(document).ready(function() { 
     // at first 
-    reloadPostsContainer();
+    reloadPostsContainer(); 
+    setTimeout(choiceClickListener, 1000); 
+    // choiceClickListener(); 
     // Set the interval to refresh the posts every 5 minutes (300,000 milliseconds)
     setInterval(reloadPostsContainer, 300000);
 });
+
+// Choosing options 
+// ------------------------------------------------------------------
+function choiceClickListener() {
+    // Attach click event listener to poll choice buttons
+    $('.poll-choice-btn').on('click', function() {
+        // Get the parent post element
+        var parentPost = $(this).closest('.post');
+        
+        // Disable choice buttons within the parent post
+        $('.poll-choice-btn', parentPost).prop('disabled', true);  
+
+        // Disable all other choice buttons
+        // $('.poll-choice-btn').prop('disabled', true);
+        
+        // Change background color of the selected choice button
+        $(this).css({
+            'background-color': '#136aa4', 
+            'border': '1px solid #136aa4'
+        }); // Change color to gray, replace with desired color
+        
+        console.log('choice clicked')
+        // Additional logic to handle sending the selected choice to the server
+        var choiceId = $(this).data('choice-id');
+        // Call a function to send the selected choice to the server
+        sendSelectedChoice(choiceId); 
+    });
+}
+
+function sendSelectedChoice(choiceId) {
+    // pass 
+}

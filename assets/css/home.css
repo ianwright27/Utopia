@@ -378,8 +378,10 @@ hover: 1a8cd8
     position: relative; 
     padding-left: 10px; 
 }
-.post-actions button { 
+.post-actions button {
+    position: relative; 
     margin-top: -10px; 
+    margin-bottom: 30px; 
     width: auto; 
     padding-left: 20px; 
     padding-right: 20px; 

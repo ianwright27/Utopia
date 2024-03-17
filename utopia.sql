@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2024 at 03:48 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.27
+-- Generation Time: Mar 17, 2024 at 08:27 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `comments` (
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `comment_text` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,7 @@ CREATE TABLE `likes` (
   `like_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -55,7 +55,7 @@ CREATE TABLE `likes` (
 CREATE TABLE `polls` (
   `poll_id` int(11) NOT NULL,
   `expiry_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `polls`
@@ -71,7 +71,12 @@ INSERT INTO `polls` (`poll_id`, `expiry_date`) VALUES
 (48, '0000-00-00 00:00:00'),
 (49, '2024-03-21 20:45:00'),
 (50, '2024-03-30 17:50:00'),
-(51, '2025-01-02 23:22:00');
+(51, '2025-01-02 23:22:00'),
+(52, '2024-03-19 18:00:00'),
+(53, '2024-03-18 18:28:00'),
+(54, '2024-03-18 20:17:00'),
+(55, '2024-03-17 22:25:00'),
+(56, '2024-03-18 20:32:00');
 
 -- --------------------------------------------------------
 
@@ -84,7 +89,7 @@ CREATE TABLE `poll_answers` (
   `poll_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `choice_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -96,7 +101,7 @@ CREATE TABLE `poll_choices` (
   `choice_id` int(11) NOT NULL,
   `poll_id` int(11) DEFAULT NULL,
   `choice` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `poll_choices`
@@ -129,7 +134,18 @@ INSERT INTO `poll_choices` (`choice_id`, `poll_id`, `choice`) VALUES
 (48, 50, 'Izuku'),
 (49, 50, 'Itadori'),
 (50, 51, 'One'),
-(51, 51, 'Two');
+(51, 51, 'Two'),
+(52, 52, 'Marvel'),
+(53, 52, 'DC'),
+(54, 53, 'Hey'),
+(55, 53, 'Howdy'),
+(56, 54, 'Google'),
+(57, 54, 'Microsoft'),
+(58, 55, 'Jericho'),
+(59, 55, 'The New One'),
+(60, 56, 'Devin got to go'),
+(61, 56, 'Can\'t wait to use Devin '),
+(62, 56, 'I am pretty siked!');
 
 -- --------------------------------------------------------
 
@@ -144,7 +160,7 @@ CREATE TABLE `posts` (
   `user_id` int(11) DEFAULT NULL,
   `time_posted` timestamp NOT NULL DEFAULT current_timestamp(),
   `post_type` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `posts`
@@ -153,14 +169,15 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`post_id`, `post_title`, `poll_id`, `user_id`, `time_posted`, `post_type`) VALUES
 (51, 'Superman vs Omniman', 42, 2, '2024-03-15 20:23:48', 'post'),
 (52, 'AI coding vs Non-AI coding 😂😂😂 Who Will Win', 43, 2, '2024-03-15 20:32:49', 'post'),
-(53, '', 44, 2, '2024-03-16 13:41:10', 'post'),
-(54, '', 45, 2, '2024-03-16 13:41:11', 'post'),
-(55, '', 46, 2, '2024-03-16 13:41:14', 'post'),
-(56, '', 47, 2, '2024-03-16 13:41:18', 'post'),
-(57, '', 48, 2, '2024-03-16 13:41:20', 'post'),
 (58, 'is rolnaldo or messi the GOAT', 49, 2, '2024-03-16 14:42:33', 'post'),
 (59, 'Who is your favorite mc', 50, 2, '2024-03-16 14:45:30', 'post'),
-(60, '1 or 2', 51, 3, '2024-03-16 14:56:42', 'post');
+(60, '1 or 2', 51, 3, '2024-03-16 14:56:42', 'post'),
+(61, 'Marvel or DC', 52, 1, '2024-03-17 15:00:28', 'post'),
+(62, 'Hey everyone!', NULL, 1, '2024-03-17 15:27:58', 'post'),
+(63, 'Hey or Howdy', 53, 1, '2024-03-17 15:28:25', 'post'),
+(64, 'Google vs Microsoft', 54, 1, '2024-03-17 17:18:13', 'post'),
+(65, 'Jericho or The New One', 55, 1, '2024-03-17 17:25:17', 'post'),
+(66, 'What do you think about Devin the new AI? ', 56, 2, '2024-03-17 17:33:06', 'post');
 
 -- --------------------------------------------------------
 
@@ -177,7 +194,7 @@ CREATE TABLE `post_stats` (
   `comments` int(11) DEFAULT 0,
   `saves` int(11) DEFAULT 0,
   `shares` int(11) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `post_stats`
@@ -193,7 +210,13 @@ INSERT INTO `post_stats` (`id`, `post_id`, `views`, `likes`, `reposts`, `comment
 (10, 57, 0, 0, 0, 0, 0, 0),
 (11, 58, 0, 0, 0, 0, 0, 0),
 (12, 59, 0, 0, 0, 0, 0, 0),
-(13, 60, 0, 0, 0, 0, 0, 0);
+(13, 60, 0, 0, 0, 0, 0, 0),
+(14, 61, 0, 0, 0, 0, 0, 0),
+(15, 62, 0, 0, 0, 0, 0, 0),
+(16, 63, 0, 0, 0, 0, 0, 0),
+(17, 64, 0, 0, 0, 0, 0, 0),
+(18, 65, 0, 0, 0, 0, 0, 0),
+(19, 66, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -205,7 +228,7 @@ CREATE TABLE `reposts` (
   `repost_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -217,7 +240,7 @@ CREATE TABLE `saves` (
   `save_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -229,7 +252,7 @@ CREATE TABLE `shares` (
   `share_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -241,19 +264,20 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `email` varchar(80) NOT NULL,
   `password_` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password_`, `created_at`) VALUES
-(1, 'Ian', 'Wright', 'thewian27@gmail.com', '$2y$10$Vln.GHE.j7r0NIxDL6vt2eApz6P/uYxViwWqq.6YV3ABnR6g9k90a', '2024-02-29 19:21:09'),
-(2, 'John', 'Doe', 'johndoe@gmail.com', '$2y$10$8xGe1JRREomo8rrquEe5w.R5740bZt/0baCn6VtIp76YsHT494v.m', '2024-02-29 20:24:07'),
-(3, 'Anna', 'Bakugo', 'mmw81624@gmail.com', '$2y$10$49/P3chDBcwMfsOumKw3Zeq5zKUVl.2a/unQXQsaDU/C1D4apAcFi', '2024-03-16 14:53:09');
+INSERT INTO `users` (`id`, `fname`, `lname`, `username`, `email`, `password_`, `created_at`) VALUES
+(1, 'Ian', 'Wright', 'GalaxyGuy', 'thewian27@gmail.com', '$2y$10$Vln.GHE.j7r0NIxDL6vt2eApz6P/uYxViwWqq.6YV3ABnR6g9k90a', '2024-02-29 19:21:09'),
+(2, 'John', 'Doe', 'JohnDoeRockerfela$', 'johndoe@gmail.com', '$2y$10$8xGe1JRREomo8rrquEe5w.R5740bZt/0baCn6VtIp76YsHT494v.m', '2024-02-29 20:24:07'),
+(3, 'Anna', 'Bakugo', 'BlueAnna', 'mmw81624@gmail.com', '$2y$10$49/P3chDBcwMfsOumKw3Zeq5zKUVl.2a/unQXQsaDU/C1D4apAcFi', '2024-03-16 14:53:09');
 
 -- --------------------------------------------------------
 
@@ -265,7 +289,7 @@ CREATE TABLE `views` (
   `view_id` int(11) NOT NULL,
   `post_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -363,7 +387,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `polls`
 --
 ALTER TABLE `polls`
-  MODIFY `poll_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `poll_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `poll_answers`
@@ -375,19 +399,19 @@ ALTER TABLE `poll_answers`
 -- AUTO_INCREMENT for table `poll_choices`
 --
 ALTER TABLE `poll_choices`
-  MODIFY `choice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `choice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `post_stats`
 --
 ALTER TABLE `post_stats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `reposts`
