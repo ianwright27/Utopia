@@ -96,20 +96,29 @@ require_once('../app_settings.php');
 
 
                         <!-- Poll Container (Hidden by default) -->
-                        <div class="poll-container" style="display: none;">
+                        <div class="poll-container col-md-5" style="display: none;">
                             <!-- Poll Choices -->
                             <div class="poll-choices">
                                 <label for="choices">Choices</label>
+                                <br>
+                                <br>
                                 <!-- <input type="text" class="poll-choice" placeholder="Choice 1"> -->
                                 <!-- <input type="text" class="poll-choice" placeholder="Choice 2"> -->
                                 <!-- Add Choice Button -->
                                 <!-- <button class="add-choice-button">Add Choice</button> -->
                             </div>
                             <!-- Expiry Date Selector -->
-                            <label for="expiry_date">Expiry Date: </label>
-                            <input type="datetime-local" name="expiry_date" id="expiryDate" class="expiry-date" placeholder="Date">
+                            <div class="add-choice-container">
+                                <label for="expiry_date">Expiry Date </label>
+                                <input type="datetime-local" name="expiry_date" id="expiryDate" class="expiry-date" placeholder="Date">
+                            </div>
+                            <br>
+                            <br>
+
                             <!-- Remove Poll Button -->
-                            <span class="remove-poll-button"><i class="fa-solid fa-trash"></i> Remove Poll</span>
+                            <div class="remove-poll-button">
+                                <!-- <i class="fa-solid fa-trash"></i> --> Cancel
+                            </div>
                         </div>
 
                         <!-- Icons for image, GIF, poll creation, emoji, schedule post, and tag live location (currently only poll creation) -->
@@ -140,9 +149,9 @@ require_once('../app_settings.php');
                 <!-- Posts / Reports here -->
                 <!-- Posts UI -->
                 <div class="posts-container">
-                <?php
-                // require_once "sample_posts.php";
-                ?>
+                    <?php
+                    // require_once "sample_posts.php";
+                    ?>
                 </div>
 
             </div>

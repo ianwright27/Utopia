@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get references to UI elements
     const pollButton = document.getElementById("pollButton");
     const pollContainer = document.querySelector(".poll-container");
+    const choiceContainer = document.querySelector(".add-choice-container"); 
     const removePollButton = document.querySelector(".remove-poll-button");
 
     // Function to reset the poll container to its default state
@@ -106,10 +107,11 @@ document.addEventListener("DOMContentLoaded", function() {
             removePollButton.style.display = "block";
             // Create the addChoice button (if not already present)
             if (!document.querySelector(".add-choice-button")) {
-                const addChoiceButton = document.createElement("span"); 
+                const addChoiceButton = document.createElement("div"); 
                 addChoiceButton.classList.add("add-choice-button");
+                addChoiceButton.title = "Add Choice"
                 addChoiceButton.innerHTML = '<i class="fa-solid fa-square-plus"></i> '; 
-                addChoiceButton.innerHTML += "Add Choice";
+                addChoiceButton.innerHTML += "";
                 addChoiceButton.addEventListener("click", function() {
                     // Create a new input element for the poll choice
                     const newChoiceInput = createChoiceInput(document.querySelectorAll(".poll-choice").length + 1); 
@@ -120,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     pollChoicesContainer.appendChild(lineBreak); 
                     removeAutoCoomplete(); 
                 });
-                pollContainer.appendChild(addChoiceButton);
+                choiceContainer.appendChild(addChoiceButton);
             }
         }
     }); 
@@ -252,7 +254,7 @@ function choiceClickListener() {
         // Change background color of the selected choice button
         $(this).css({
             'background-color': '#136aa4', 
-            'border': '1px solid #136aa4'
+            'border': '2px solid #136aa4'
         }); // Change color to gray, replace with desired color
         
         console.log('choice clicked')

@@ -227,13 +227,28 @@
     margin-left: auto; 
     margin-right: auto; 
     background: transparent; 
-    width: 55%; 
-    padding: 20px; 
-    padding-bottom: 75px;
+    width: 65%; 
+    padding: 10px; 
+    padding-bottom: 35px;
     border-radius: 10px; 
     border: 1px solid #d8d8d8; 
     margin-bottom: 10px;
+} 
+.add-choice-container {
+    position: relative; 
+    width: 100%; 
+    height: 30px; 
+    border-top: 1px solid #e6e6e6;
+    /* background-color: #599bc7;  */
+} 
+
+.add-choice-container label{ 
+    margin-top: 12px;
+    margin-left: 10px;  
+    font-size: 14px; 
+    font-weight: bold; 
 }
+
 .poll-choices {
     position: relative; 
     margin-left: auto; 
@@ -249,51 +264,63 @@
     padding: 5px; 
     width: 100%; 
     font-size: 14px; 
+    font-weight: bold; 
     border-radius: 5px;
     border: 1px solid #d8d8d8; 
 } 
 .poll-choices label {
+    margin-top: 5px;
     margin-left: 0px !important;  
 }
-.poll-container label{
+.poll-choices label{ 
+    margin-top: 5px;
     margin-left: 10px;  
     font-size: 14px; 
     font-weight: bold; 
 }
 #expiryDate {
     margin-left: 10px;  
+    width: 120px; 
+    font-size: 14px; 
+    line-height: 2; 
+    border-radius: 5px;
     border: 1px solid #d8d8d8; 
     color: #8a8a8a; 
 } 
-.poll-container span {
-    float: left; 
-    margin-top: 15px; 
-    margin-left: 10px;   
+
+.remove-poll-button {
+    position: relative; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 88%; 
     padding: 5px; 
-    font-size: 14px; 
+    font-size: 12px; 
     border: 1px solid #4b4b4b; 
     border-radius: 5px; 
     cursor: pointer; 
-}
-.remove-poll-button {
-    color: #dd3a48; 
-    border: 1px solid #dd3a48 !important; 
+    text-align: center;
+    color: #d3a4a8; 
+    border: 1px solid #d3a4a8 !important; 
 }
 
-.add-choice-button {
+.add-choice-button { 
+    position: absolute; 
+    top: 0px; 
+    font-size: 30px; 
+    cursor: pointer; 
+    right: 8px; 
     color: #1990df; 
-    border: 1px solid #1990df !important; 
 }
 
 .remove-poll-button:hover {
-    color: #dd3a48; 
-    border: 1px solid #dd3a48 !important; 
+    color: #d3a4a8; 
+    border: 1px solid #d3a4a8 !important; 
     background-color: #faeaec; 
 }
 
 .add-choice-button:hover {
-    background-color: #1990df; 
-    color: #fff; 
+    /* background-color: #1990df;  */
+    color: #0f5f94; 
 }
 
 
